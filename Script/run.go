@@ -9,7 +9,7 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
-func ScrriptRunner(email, pwd string, steps map[string]string) {
+func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 	// ctxx, cancel := context.WithCancel(context.Background())
 	startTime := time.Now()
 	defer fmt.Println( "passed ", time.Since(startTime))
@@ -20,7 +20,7 @@ func ScrriptRunner(email, pwd string, steps map[string]string) {
 	// }
 
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.Flag("headless", false),
+		chromedp.Flag("headless", Show),
 		chromedp.Flag("disable-gpu", true),
 		chromedp.Flag("start-maximized", true),
 		chromedp.Flag("disable-extensions", true),
