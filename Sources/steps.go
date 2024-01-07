@@ -10,10 +10,14 @@ var Steps = map[string]string{
 	"B2" :			  `ol.level-filters-bar-list > li:nth-child(5)> button`,
 	"01-choice":		`ul.mission-lessons-list li:first-child a[data-test="lesson-link"]`,
 	"ch1-vid": 			`ul.lesson-menu-activities-list li:nth-child(1) a[data-test="activity-VIDEO-link"]`,
-	"ch2-syn": 			`ul.lesson-menu-activities-list li:nth-child(2) a[data-tes~t="activity-VOCABULARY_LIST-link"]`,
+	"ch2-syn": 			`ul.lesson-menu-activities-list li:nth-child(2) a[data-test="activity-VOCABULARY_LIST-link"]`,
 	"ch2-exs1":			`ul.lesson-menu-activities-list li:nth-child(3) a[data-test="activity-EXERCISE-link"]`,
 	"continue":			`div.footer-button-bar-row button[data-test="footer-bar-button"]`,
 	"move_on":			`main > altissia-activity-result > div > div.result-button-box > altissia-main-button button[data-test="main-button"]`,
+
+	"in-01-ex-01":		`altissia-exercise-question  altissia-player-text-input:nth-child(1)  input[data-test="open-input"]`,
+	"in-02-ex-01":		`altissia-exercise-question  altissia-player-text-input:nth-child(2)  input[data-test="open-input"]`,
+	"OK-btn":			`altissia-footer-button-bar button[data-test="footer-bar-button"]`,
 
 	"lesson-card":		`a.new-card.lesson-card-container.lesson-card-container-is-active[data-test="lesson-link"]`,
 	"B2-button":     	`button.level-filter-btn.level-filter-btn-is-active[data-test="level-filter-button"]`,
