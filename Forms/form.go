@@ -16,7 +16,7 @@ func FormDisplay( Email, Password *string, Start ,Show *bool ) {
 		huh.NewGroup(
 			//email Group
 			huh.NewInput().
-				Title("enter ur ofppt-langue acount snow man ").
+				Title("enter ur ofppt-langue account snow man ").
 				Value(Email).
 				Placeholder("soyaka@ofppt-edu.ma").
 				Prompt("👤 ").
@@ -34,7 +34,7 @@ func FormDisplay( Email, Password *string, Start ,Show *bool ) {
 		
 			// password group
 			huh.NewInput().
-				Title("now the password  turn focus!").
+				Title("now the password | turn focus!").
 				Value(Password).
 				Prompt("🔒 ").
 				Placeholder("focus").
@@ -43,8 +43,8 @@ func FormDisplay( Email, Password *string, Start ,Show *bool ) {
 			huh.NewSelect[bool]().
 				Title("would u like to see what happenning ?").
 				Options(
-					huh.NewOption("yes, show me!",true).Selected(true),
-					huh.NewOption("no, keep it abstract",false),
+					huh.NewOption("yes, show me!",false).Selected(true),
+					huh.NewOption("no, keep it abstract",true),
 				).
 				Value(Show),
 

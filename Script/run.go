@@ -12,7 +12,7 @@ import (
 func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 	// ctxx, cancel := context.WithCancel(context.Background())
 	startTime := time.Now()
-	defer fmt.Println( "passed ", time.Since(startTime))
+	defer fmt.Println("passed ", time.Since(startTime))
 	// email, pwd, err := GetTheCredentials()
 	// if err != nil {
 
@@ -21,6 +21,7 @@ func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
 		chromedp.Flag("headless", Show),
+		chromedp.Flag("mute-audio", true),
 		chromedp.Flag("disable-gpu", true),
 		chromedp.Flag("start-maximized", true),
 		chromedp.Flag("disable-extensions", true),
@@ -50,16 +51,59 @@ func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 		chromedp.Sleep(5*time.Second),
 		chromedp.WaitVisible(steps["next"], chromedp.ByID),
 		chromedp.Click(steps["next"], chromedp.ByID),
-		chromedp.Sleep(20*time.Second),
-		chromedp.Location(&res),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+		chromedp.Sleep(10*time.Second),
+		/// Fix: change the attr
+		chromedp.WaitVisible(steps["B2"], chromedp.ByQuery),
+		chromedp.Click(steps["B2"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+		chromedp.WaitVisible(steps["01-choice"], chromedp.ByQuery),
+		chromedp.Click(steps["01-choice"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+
+		chromedp.WaitVisible(steps["ch1-vid"], chromedp.ByQuery),
+		chromedp.Click(steps["ch1-vid"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+		chromedp.WaitVisible(steps["play_btn"], chromedp.ByQuery),
+		chromedp.Click(steps["play_btn"], chromedp.ByQuery),
+
+		chromedp.WaitVisible(steps["after-video"], chromedp.ByQuery),
+		chromedp.Click(steps["after-video"], chromedp.ByQuery),
+		chromedp.Sleep(10*time.Second),
+		chromedp.WaitVisible(steps["ch2-syn"], chromedp.ByQuery),
+		chromedp.Click(steps["ch2-syn"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+		chromedp.Location(&res))
+		fmt.Println(res)
+		if err != nil {
+			log.Fatal(err)
+		}
+		for i:=0 ;i<=34; i++{
+			err = chromedp.Run(ctx,
+				chromedp.WaitVisible(steps["continue"], chromedp.ByQuery),
+				chromedp.Click(steps["continue"], chromedp.ByQuery),
+				chromedp.Sleep(1*time.Second),
+			)
+
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+		fmt.Println(" I got Here 1")
+		err = chromedp.Run(ctx,
+		chromedp.WaitVisible(steps["move_on"], chromedp.ByQuery),
+		chromedp.Click(steps["move_on"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+		chromedp.WaitVisible(steps["ch2-exs1"], chromedp.ByQuery),
+		chromedp.Click(steps["ch2-exs1"], chromedp.ByQuery),
+		chromedp.Sleep(5*time.Second),
+		)
+		if err != nil {
+			log.Fatal(err)
+		}
+
 
 	fmt.Println("Current URL:", res)
 
-	
 }
 
 // func GetTheCredentials() (e, p string, err error) {
@@ -110,4 +154,3 @@ func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 // 		}
 // 	}
 // }
-
