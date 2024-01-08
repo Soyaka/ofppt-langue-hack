@@ -79,7 +79,7 @@ func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 				err := chromedp.Run(ctx,
 					chromedp.WaitVisible(steps["continue"], chromedp.ByQuery),
 					chromedp.Click(steps["continue"], chromedp.ByQuery),
-					chromedp.Sleep(1*time.Second),
+					chromedp.Sleep(10*time.Second),
 				)
 
 				if err != nil {
@@ -89,7 +89,7 @@ func ScrriptRunner(email, pwd string, steps map[string]string, Show bool) {
 			err = chromedp.Run(ctx,
 			chromedp.WaitVisible(steps["move_on"], chromedp.ByQuery),
 			chromedp.Click(steps["move_on"], chromedp.ByQuery),
-			chromedp.Sleep(5*time.Second),
+			chromedp.Sleep(10*time.Second),
 			)
 			if err != nil {
 				log.Fatal(err)

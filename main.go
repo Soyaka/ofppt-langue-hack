@@ -30,7 +30,7 @@ func main() {
 func JustFun() {
 
 	huh.NewText().
-		Title("Are satissfied if you want t change some thing keep your feedback!").
+		Title("Are u satissfied? i not keep your feedback!").
 		Value(&story).
 		Run()
 }
