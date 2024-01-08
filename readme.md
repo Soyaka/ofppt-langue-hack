@@ -1,36 +1,28 @@
-    <h1>OFPPT Langue Automation Script</h1>
+# OFPPT Langue Automation Script
 
-    <h2>Description</h2>
-    <p>This is a simple automation script designed for OFPPT Langue. The script utilizes <a href="https://github.com/chromedp/chromedp" target="_blank">go-chromedp</a>, a Chrome DevTools Protocol client for Go, to automate interactions with web pages.</p>
+## Description
 
-    <h2>Usage</h2>
-    <ol>
-        <li><strong>Download Executable:</strong>
-            <ul>
-                <li>Download the executable file corresponding to your operating system from the releases section.</li>
-            </ul>
-        </li>
-        <li><strong>Run the Script:</strong>
-            <ul>
-                <li>Execute the downloaded file.</li>
-                <li>The script will open a terminal window and prompt you with questions.</li>
-            </ul>
-        </li>
-        <li><strong>Answer Questions:</strong>
-            <ul>
-                <li>Answer the questions in the terminal to provide necessary inputs.</li>
-            </ul>
-        </li>
-        <li><strong>Keep the Terminal Open:</strong>
-            <ul>
-                <li>Once the script is running, avoid closing the terminal to ensure the automation process continues.</li>
-            </ul>
-        </li>
-    </ol>
+This is a simple automation script designed for OFPPT Langue. The script utilizes [go-chromedp](https://github.com/chromedp/chromedp), a Chrome DevTools Protocol client for Go, to automate interactions with web pages.
 
-    <h2>Important Note</h2>
-    <p>The script is designed to automate specific tasks on the OFPPT Langue website. Ensure you are using it responsibly and in accordance with the terms of service of the website.</p>
+## Usage
 
-    <p>Feel free to customize the script or contribute to its improvement by submitting pull requests.</p>
+1. **Download Executable:**
+   - Download the executable file corresponding to your operating system from the [releases section](#).
 
-    <p><strong>Happy Automation!</strong></p>
+2. **Run the Script:**
+   - Execute the downloaded file.
+   - The script will open a terminal window and prompt you with questions.
+
+3. **Answer Questions:**
+   - Answer the questions in the terminal to provide necessary inputs.
+
+4. **Keep the Terminal Open:**
+   - Once the script is running, avoid closing the terminal to ensure the automation process continues.
+
+## Important Note
+
+The script is designed to automate specific tasks on the OFPPT Langue website. Ensure you are using it responsibly and in accordance with the terms of service of the website.
+
+Feel free to customize the script or contribute to its improvement by submitting pull requests.
+
+**Happy Automation!**
